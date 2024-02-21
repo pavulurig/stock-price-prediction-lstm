@@ -64,14 +64,4 @@ train_predict = scaler.inverse_transform(train_predict)
 test_predict = scaler.inverse_transform(test_predict)
 
 # Calculate and print RMSE for both training and test data
-train_rmse = math.sqrt(mean_squared_error(y_train, train_predict))
-test_rmse = math.sqrt(mean_squared_error(y_test, test_predict))
-print(f"Train RMSE: {train_rmse}, Test RMSE: {test_rmse}")
-
-# Plot the actual prices and the model's predictions
-plt.figure(figsize=(15, 6))
-plt.plot(df['Close'].values, label='Actual Price')  # Actual prices
-plt.plot(np.arange(time_step, len(train_predict) + time_step), train_predict.ravel(), label='Training Predictions')  # Training predictions
-plt.plot(np.arange(len(train_predict) + (time_step*2) + 1, len(train_predict) + (time_step*2) + 1 + len(test_predict)), test_predict.ravel(), label='Test Predictions')  # Test predictions
-plt.legend()
-plt.show()
+train_rmse = math.
